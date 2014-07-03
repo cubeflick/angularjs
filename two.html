@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app>
+<head>
+	<script src="js/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-controller="FirstController">
+
+	Enter Name :<input type="name" ng-model="name">
+	<br/>
+	Your Name is : {{name}}
+	
+	<ul>
+		<li ng-repeat="emp in employees | filter:name">{{emp.name | uppercase}} - {{emp.degree}}</li>
+	</ul>
+
+</div>
+
+<script lang="javascript">
+console.log("We are here in javascript");
+
+function FirstController($scope)
+{
+	var employees = []
+	$scope.employees = [{name:"prem",degree:"mca"},{name:"kapil",degree:"mca"}]; 	
+}
+
+</script>
+
+</body>
+</html>

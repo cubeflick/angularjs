@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app = "MyApp">
+<head>
+	<script src="js/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-controller="FirstController">
+
+	Enter Name :<input type="name" ng-model="name">
+	<br/>
+	Your Name is : {{name}}
+	
+	<ul>
+		<li ng-repeat="emp in employees"><input type="checkbox" >{{emp.name | uppercase}} - {{emp.degree}}</li>
+	</ul>
+
+</div>
+
+<script lang="javascript">
+
+var firstApp = angular.module('MyApp',[]);
+
+firstApp.controller('FirstController',function($scope){
+	var employees = [];
+	$scope.employees = [{name:"prem",degree:"mca"},{name:"kapil",degree:"mca"}];
+	
+});
+
+/*
+function FirstController($scope){
+	var employees = [];
+	$scope.employees = [{name:"prem",degree:"mca"},{name:"kapil",degree:"mca"}];
+}
+
+*/
+
+</script>
+
+</body>
+</html>

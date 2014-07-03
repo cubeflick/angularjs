@@ -1,0 +1,28 @@
+    <html ng-app>
+    <!-- Body tag augmented with ngController directive -->
+    <body ng-controller="FirstController">
+    <input ng-model="foo" value="bar">
+    <!-- Button tag with ng-click directive, and
+    string expression 'buttonText'
+    wrapped in "{{ }}" markup -->
+    <button ng-click="changeFoo()">{{buttonText}}</button>
+    	<script src="js/angular.min.js"></script>
+    </body>
+    </html>
+    
+    
+    <script lang="javascript">
+console.log("We are here in javascript");
+
+function FirstController($scope)
+{
+	$scope.buttonText = "First";
+	var employees = []
+	$scope.employees = [{name:"prem",degree:"mca"},{name:"kapil",degree:"mca"}];
+	
+	$scope.changeFoo = function(){
+		$scope.buttonText = $scope.foo;
+	}
+}
+
+</script>
